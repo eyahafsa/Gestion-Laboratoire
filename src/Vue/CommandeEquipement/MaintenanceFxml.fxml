@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #f5f7fa, #c3cfe2);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CommandeEquipement.MaintenanceFxmlController">
+   <children>
+      <Button fx:id="back" mnemonicParsing="false" onAction="#handleback" text="⬅">
+         <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+      <BorderPane prefHeight="747.0" prefWidth="731.0">
+         <top>
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e3d59;" text="Suivi de Maintenance" BorderPane.alignment="CENTER" />
+         </top>
+         <center>
+            <VBox alignment="CENTER" prefWidth="731.0" spacing="20" style="-fx-padding: 20;">
+               <children>
+                  <GridPane alignment="CENTER" hgap="15" vgap="20">
+                     <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" percentWidth="30" />
+                        <ColumnConstraints halignment="LEFT" percentWidth="70" />
+                     </columnConstraints>
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="197.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Nom de l'équipement:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="equipementField" promptText="Entrez le nom de l'équipement" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label prefHeight="20.0" prefWidth="194.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Marque:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="marqueField" promptText="Entrez la marque" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label prefHeight="20.0" prefWidth="193.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Numéro de Série:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="numSerieField" promptText="Entrez le numéro de série" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label prefHeight="20.0" prefWidth="194.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Technicien:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="technicienField" promptText="Entrez le nom du technicien" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label prefHeight="20.0" prefWidth="193.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Date de Maintenance:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="dateMaintenancePicker" prefHeight="26.0" prefWidth="473.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label prefHeight="20.0" prefWidth="194.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Type de Maintenance:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="typeMaintenanceCombo" prefHeight="26.0" prefWidth="478.0" promptText="Sélectionnez un type" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label prefHeight="20.0" prefWidth="194.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Etat Avant Maintenance:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                        <TextArea fx:id="etatAvantArea" promptText="Décrivez l'état avant la maintenance" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Label prefHeight="20.0" prefWidth="194.0" style="-fx-text-fill: #1e3d59; -fx-font-size: 14px;" text="Etat Après Maintenance:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <TextArea fx:id="etatApresArea" prefHeight="192.0" prefWidth="378.0" promptText="Décrivez l'état après la maintenance" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     </children>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                  </GridPane>
+                  <HBox alignment="CENTER" spacing="15">
+                     <children>
+                        <Button fx:id="planifierButton" onAction="#planifierMaintenance" style="-fx-background-color: #000080; -fx-text-fill: white;" text="Planifier" />
+                        <Button fx:id="modifierButton" onAction="#modifierMaintenance" style="-fx-background-color: #000080; -fx-text-fill: white;" text="Modifier" />
+                        <Button fx:id="genererButton" onAction="#genererRapport" style="-fx-background-color: #000080; -fx-text-fill: white;" text="Générer Rapport" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </BorderPane>
+   </children>
+</VBox>

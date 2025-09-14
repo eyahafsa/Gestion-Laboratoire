@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="621.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CommandeEquipement.StockFxmlController">
+
+    <!-- Titre -->
+    <Text fill="#2a4c73" fontSmoothingType="LCD" layoutX="275.0" layoutY="40.0" text="Gestion du stock" textAlignment="CENTER">
+        <font>
+            <Font name="Calibri Bold Italic" size="30.0" />
+        </font>
+    </Text>
+
+    <!-- Zone d'entrée des champs -->
+    <VBox alignment="CENTER_LEFT" layoutX="50.0" layoutY="70.0" prefWidth="700.0" spacing="10.0">
+        <TextField fx:id="equipementNameField" promptText="Nom de l'équipement" />
+        <TextField fx:id="equipementBrandField" promptText="Marque de l'équipement" />
+        <TextField fx:id="equipementStateField" promptText="État de l'équipement" />
+        <TextField fx:id="equipementNumSerieField" promptText="Numéro de série" />
+        <TextField fx:id="equipementTempField" promptText="Température (biologique)" />
+        <TextField fx:id="equipementPrecisionField" promptText="Précision (physique)" />
+
+        <!-- Boutons pour ajouter des équipements -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button onAction="#ajouterEquipementPhysique" text="Ajouter Équipement Physique" />
+            <Button onAction="#ajouterEquipementBiologique" text="Ajouter Équipement Biologique" />
+        </HBox>
+
+        <!-- Boutons pour afficher les équipements -->
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button onAction="#afficherEquipementsPhysiques" text="Afficher Physiques" />
+            <Button onAction="#afficherEquipementsBiologiques" text="Afficher Biologiques" />
+            <Button onAction="#afficherQuantiteTotale" text="Afficher Nombre Totale" />
+        </HBox>
+    </VBox>
+
+    <!-- TableView pour afficher les équipements -->
+    <TableView fx:id="equipementTable" layoutX="50.0" layoutY="355.0" prefHeight="157.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="nomColumn" prefWidth="150.0" text="Nom" />
+            <TableColumn fx:id="marqueColumn" prefWidth="150.0" text="Marque" />
+            <TableColumn fx:id="etatColumn" prefWidth="100.0" text="État" />
+            <TableColumn fx:id="numSerieColumn" prefWidth="150.0" text="Numéro de Série" />
+            <TableColumn fx:id="dateAchatColumn" prefWidth="150.0" text="Date d'Achat" />
+        </columns>
+    </TableView>
+
+    <!-- Zone de texte pour les sorties -->
+    <TextArea fx:id="outputArea" editable="false" layoutX="50.0" layoutY="520.0" prefHeight="50.0" prefWidth="700.0" wrapText="true" />
+
+    <!-- Bouton pour rechercher un équipement -->
+    <Button layoutX="325.0" layoutY="573.0" onAction="#rechercherEquipementParNom" text="Rechercher par Nom" />
+   <Button fx:id="back" mnemonicParsing="false" onAction="#handleback" text="⬅" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+</AnchorPane>

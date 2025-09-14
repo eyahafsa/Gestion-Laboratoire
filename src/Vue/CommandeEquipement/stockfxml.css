@@ -1,0 +1,29 @@
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #F0F0F0;
+}
+
+.TextField {
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.Button {
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+
+.TextArea {
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-min-height: 150px;
+    -fx-max-height: 150px;
+}
+
+.VBox {
+    -fx-spacing: 15;
+}
+
+.HBox {
+    -fx-spacing: 10;
+}

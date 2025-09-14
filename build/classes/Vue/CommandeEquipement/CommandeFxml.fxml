@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="499.0" prefWidth="608.0" style="-fx-background-color: #E0E0E0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CommandeEquipement.CommandeFxmlController">
+    <children>
+        <!-- Header -->
+        <Label layoutX="224.0" layoutY="21.0" prefHeight="27.0" prefWidth="164.0" style="-fx-text-fill: #333333; -fx-font-size: 18px; -fx-font-weight: bold;" text="Commande Details">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+
+        <!-- Labels -->
+        <Label layoutX="48.0" layoutY="70.0" style="-fx-text-fill: #333333; -fx-font-size: 14px;" text="ID Commande:" />
+        <Label fx:id="idCommandeLabel" layoutX="150.0" layoutY="70.0" style="-fx-text-fill: #333333; -fx-font-size: 14px;" />
+
+        <Label layoutX="48.0" layoutY="100.0" style="-fx-text-fill: #333333; -fx-font-size: 14px;" text="Date:" />
+        <Label fx:id="dateCommandeLabel" layoutX="150.0" layoutY="100.0" style="-fx-text-fill: #333333; -fx-font-size: 14px;" />
+
+        <!-- ListView -->
+        <ListView fx:id="materielsListView" layoutX="41.0" layoutY="180.0" prefHeight="223.0" prefWidth="530.0" style="-fx-background-color: white; -fx-border-color: #336791; -fx-border-radius: 5px;" />
+
+        
+        <Label layoutX="50.0" layoutY="390.0" style="-fx-text-fill: #333333; -fx-font-size: 14px; -fx-font-weight: bold;" />
+        <Label fx:id="montantTotalLabel" layoutX="220.0" layoutY="370.0" style="-fx-text-fill: #333333; -fx-font-size: 14px;" /> 
+         
+
+        <!-- Buttons -->
+        <Button fx:id="validerButton" layoutX="47.0" layoutY="420.0" prefHeight="30.0" prefWidth="222.0" style="-fx-background-color: #336791; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5px;" text="Valider" />
+        <Button fx:id="annulerButton" layoutX="334.0" layoutY="420.0" prefHeight="30.0" prefWidth="214.0" style="-fx-background-color: #336791; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5px;" text="Annuler" />
+        <Button fx:id="addArticleButton" layoutX="47.0" layoutY="127.0" onAction="#addArticle" prefHeight="30.0" prefWidth="221.0" style="-fx-background-color: #336791; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5px;" text="Ajouter Article" />
+
+        
+<Button fx:id="removeArticleButton" layoutX="326.0" layoutY="127.0" onAction="#removeArticle" prefHeight="30.0" prefWidth="214.0" style="-fx-background-color: #336791; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 5px;" text="Supprimer Article" />
+      <Button fx:id="back" mnemonicParsing="false" onAction="#handleback" text="⬅" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+
+
+    </children>
+</AnchorPane>
